@@ -3,12 +3,10 @@
 namespace NewVectorDistance
 {
 
-    
-
     class Program
     {
         static Random R = new Random();
-        struct Point
+      public struct Point
             {
           
             public int x;
@@ -82,7 +80,7 @@ namespace NewVectorDistance
 
             double smallestDistance = 0;
 
-            double previousDistance = 45;
+            double previousDistance = 1000;
 
             // First Point
             int x1 = 0, y1 = 0, z1 = 0;
@@ -98,7 +96,7 @@ namespace NewVectorDistance
                 {
                    if (c != b )
                     {
-                                             
+                                                         
                         distance = GetDistance(points[c], points[b]);
                     }
                    
@@ -110,12 +108,11 @@ namespace NewVectorDistance
 
                         // Capturing X and Y values for Console.Write
 
-                        
-                       
-                       // First Point 
-                       x1 = points[c].x;
-                       y1 = points[c].y;
-                       z1 = points[c].z;
+
+                        // First Point 
+                        x1 = points[c].x;
+                        y1 = points[c].y;
+                        z1 = points[c].z;
                         // Second Point
                         x2 = points[b].x;
                         y2 = points[b].y;
@@ -129,8 +126,8 @@ namespace NewVectorDistance
                             
                 }
             }
-        Console.WriteLine($"The closest points are \nArray Element:" +
-            $" |{firstPoint}| X:{x1}, Y:{y1}, Z:{z1} \n\nAND \n\nArray Element: |{secondPoint}| X:{x2}, Y:{y2}, Z:{z2}");
+            Console.WriteLine($"The closest points are \nArray Element:" +
+                $" |{firstPoint}| X:{x1}, Y:{y1}, Z:{z1} \n\nAND \n\nArray Element: |{secondPoint}| X:{x2}, Y:{y2}, Z:{z2}");
 
             return smallestDistance;
         }
@@ -144,19 +141,23 @@ namespace NewVectorDistance
                 Console.WriteLine($"\nArray Element: |{i}| X:{foo[i].x}, Y:{foo[i].y}, Z:0 ");
             }
         }
-  
+
 
         static void Main(string[] args)
         {
+            
+        
+
             Console.WriteLine("-----------------------First Part-------------------------------------------");
             Print();
-            Console.WriteLine($"You have successfully created a container with 100 random Two-Dimentional point");
+            Console.WriteLine("\n");
+            Console.WriteLine($"You have successfully created a container with 100 random Two-Dimensional points\n and 1000 random Three-Dimensional points \n");
 
-            Console.WriteLine("-----------------------Second Part------------------------------------------");
-            Console.WriteLine($"Closest Eculidean Distance Between (100) Two-Dimentional Points: |{FindClosest(GetPoints(100))}|");
+            Console.WriteLine("-----------------------Two Dimensional Points------------------------------------------");
+            Console.WriteLine($"Closest Euclidean Distance of (100) Two-Dimentional Points: |{FindClosest(GetPoints(100))}|");
             Console.WriteLine("\n\n");
-            Console.WriteLine("-----------------------Third And Fourth Part--------------------------------");
-            Console.WriteLine($"With a Distance of: |{FindClosest(GetPoints(1000))}|");
+            Console.WriteLine("-----------------------Three Dimensional Points--------------------------------");
+            Console.WriteLine($"Closest Euclidean Distance of (1000) Three-Dimentional Points: |{FindClosest(GetPoints(1000))}|");
             Console.WriteLine("----------------------------------------------------------------------------");
         }
 
